@@ -177,7 +177,7 @@ streamlit run frontend/app.py
 
 2. **配置环境变量**
    ```
-   DEEPSEEK_API_KEY=sk-e7abd2ee989e4c0cb92f748a94dd1fa1
+   DEEPSEEK_API_KEY=your_api_key_here
    ```
 
 3. **创建数据库集合**
