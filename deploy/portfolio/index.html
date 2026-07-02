@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人作品集</title>
-    <meta name="description" content="个人作品集，展示项目和技术能力">
+    <title>AI 应用开发工程师作品集</title>
+    <meta name="description" content="AI 应用开发工程师作品集，展示 RAG、Agent 和全栈 AI 应用开发能力">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -17,6 +17,7 @@
             --accent: #0ea5e9;
             --success: #10b981;
             --warning: #f59e0b;
+            --danger: #ef4444;
             --bg-white: #ffffff;
             --bg-light: #fafafa;
             --bg-gray: #f5f5f5;
@@ -243,6 +244,91 @@
             color: var(--text-main);
         }
 
+        /* Progress Section */
+        .progress-section {
+            background: var(--bg-gray);
+            padding: 80px 40px;
+        }
+
+        .progress-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .progress-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: var(--transition-slow);
+        }
+
+        .progress-card:hover {
+            border-color: var(--text-muted);
+            box-shadow: var(--shadow-md);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .progress-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .progress-status {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-progress {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-planned {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .progress-bar {
+            background: var(--border);
+            border-radius: 100px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 100px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 1s ease;
+        }
+
+        .progress-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
         /* Project Cards */
         .projects-grid {
             display: grid;
@@ -327,6 +413,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
+            margin-bottom: 20px;
         }
 
         .tech-tag {
@@ -339,6 +426,184 @@
             color: var(--text-secondary);
         }
 
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .link-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .link-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .link-secondary {
+            background: var(--bg-gray);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .link-secondary:hover {
+            background: var(--border-light);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .skill-category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .skill-level {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+
+        .level-expert {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .level-proficient {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .level-familiar {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 12px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--bg-white);
+            border: 3px solid var(--primary);
+        }
+
+        .timeline-dot.completed {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .timeline-dot.planned {
+            background: var(--bg-white);
+            border-color: var(--text-muted);
+        }
+
+        .timeline-content {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
 
         /* Contact Section */
         .contact-grid {
@@ -478,6 +743,10 @@
                 padding: 60px 20px;
             }
 
+            .progress-section {
+                padding: 60px 20px;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -500,10 +769,13 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-text">个人作品集</span>
+                <span class="logo-text">AI 应用开发工程师</span>
             </a>
             <ul class="nav-links">
+                <li><a href="#progress">进度</a></li>
                 <li><a href="#projects">作品</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#timeline">时间线</a></li>
                 <li><a href="#contact">联系</a></li>
             </ul>
         </div>
@@ -516,21 +788,81 @@
                 <span class="hero-label-dot"></span>
                 可用状态
             </div>
-            <h1 class="hero-title animate-in delay-1">个人作品集</h1>
+            <h1 class="hero-title animate-in delay-1">AI 应用开发工程师作品集</h1>
             <p class="hero-desc animate-in delay-2">
-                探索我开发的项目，了解我的技术能力和创意思维。
+                专注于 RAG、Agent 和全栈 AI 应用开发。展示从基础 API 调用到复杂 RAG 架构的完整技术栈。
             </p>
             <div class="hero-cta animate-in delay-3">
                 <a href="#projects" class="btn btn-primary">
                     查看作品
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                <a href="#contact" class="btn btn-secondary">
-                    联系我
+                <a href="https://github.com/achen20030701/Portfolio" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
                 </a>
             </div>
         </div>
     </header>
+
+    <!-- Progress Section -->
+    <section id="progress" class="progress-section">
+        <div class="progress-container">
+            <div class="section-header">
+                <div class="section-label">
+                    <i class="fas fa-chart-line"></i>
+                    项目进度
+                </div>
+                <h2 class="section-title">实时更新的项目状态</h2>
+            </div>
+
+            <div class="progress-grid">
+                <div class="progress-card animate-in delay-1">
+                    <div class="progress-header">
+                        <h3 class="progress-title">AI 智能问答助手</h3>
+                        <span class="progress-status status-completed">已完成</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <p class="progress-text">✅ 已上线部署 · Serverless 架构</p>
+                </div>
+
+                <div class="progress-card animate-in delay-2">
+                    <div class="progress-header">
+                        <h3 class="progress-title">RAG 文档问答系统</h3>
+                        <span class="progress-status status-completed">已完成</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <p class="progress-text">✅ 已上线部署 · 向量检索 + LLM</p>
+                </div>
+
+                <div class="progress-card animate-in delay-3">
+                    <div class="progress-header">
+                        <h3 class="progress-title">RAG 进阶优化</h3>
+                        <span class="progress-status status-planned">计划中</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p class="progress-text">⏳ 混合检索 + Rerank + 评测报告</p>
+                </div>
+
+                <div class="progress-card animate-in delay-4">
+                    <div class="progress-header">
+                        <h3 class="progress-title">数据分析 Agent</h3>
+                        <span class="progress-status status-planned">计划中</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p class="progress-text">⏳ Function Calling + 工具调用</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section">
@@ -551,11 +883,16 @@
                     </div>
                 </div>
                 <h3 class="project-title">AI 智能问答助手</h3>
-                <p class="project-desc">基于 DeepSeek 大模型的智能问答系统，支持自然语言对话，自动保存对话历史。</p>
+                <p class="project-desc">基于腾讯云 CloudBase 的 Serverless AI 问答应用。支持自然语言对话，自动保存历史记录。采用云函数 + 云数据库架构，无需管理服务器。</p>
                 <div class="project-tech">
                     <span class="tech-tag">Node.js</span>
                     <span class="tech-tag">CloudBase</span>
                     <span class="tech-tag">DeepSeek</span>
+                    <span class="tech-tag">Serverless</span>
+                </div>
+                <div class="project-links">
+                    <span class="project-link link-primary">🔗 在线体验</span>
+                    <span class="project-link link-secondary">📖 技术解析</span>
                 </div>
             </a>
 
@@ -567,14 +904,227 @@
                     </div>
                 </div>
                 <h3 class="project-title">RAG 文档问答系统</h3>
-                <p class="project-desc">上传文档，用自然语言提问，AI 根据文档内容回答，支持来源追溯。</p>
+                <p class="project-desc">基于 RAG 架构的文档问答系统。支持用户上传文档，基于文档内容进行语义问答。使用 LangChain + Chroma + DeepSeek 实现向量检索和智能问答。</p>
                 <div class="project-tech">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FastAPI</span>
                     <span class="tech-tag">LangChain</span>
-                    <span class="tech-tag">ChromaDB</span>
+                    <span class="tech-tag">Chroma</span>
+                    <span class="tech-tag">DeepSeek</span>
+                </div>
+                <div class="project-links">
+                    <span class="project-link link-primary">📁 源代码</span>
+                    <span class="project-link link-secondary">📖 技术解析</span>
                 </div>
             </a>
+
+            <div class="project-card animate-in delay-3" style="opacity: 0.7;">
+                <div class="project-header">
+                    <div class="project-icon">🔬</div>
+                    <div class="project-arrow">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+                <h3 class="project-title">RAG 进阶优化版</h3>
+                <p class="project-desc">在现有 RAG 系统基础上进行深度优化。实现混合检索（向量 + BM25）、Rerank 重排序、Query Rewrite 查询重写，并提供评测报告。</p>
+                <div class="project-tech">
+                    <span class="tech-tag">rank_bm25</span>
+                    <span class="tech-tag">BGE-Reranker</span>
+                    <span class="tech-tag">RAGAS</span>
+                    <span class="tech-tag">HyDE</span>
+                </div>
+                <div class="project-links">
+                    <span class="project-link link-secondary">📋 升级规划</span>
+                </div>
+            </div>
+
+            <div class="project-card animate-in delay-4" style="opacity: 0.7;">
+                <div class="project-header">
+                    <div class="project-icon">🤖</div>
+                    <div class="project-arrow">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+                <h3 class="project-title">数据分析 Agent</h3>
+                <p class="project-desc">基于 Function Calling 的数据分析 Agent。支持用户上传 CSV/Excel 数据，Agent 自动理解数据结构，编写代码进行分析和可视化，生成分析报告。</p>
+                <div class="project-tech">
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">Function Calling</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Echarts</span>
+                </div>
+                <div class="project-links">
+                    <span class="project-link link-secondary">📋 升级规划</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-header">
+            <div class="section-label">
+                <i class="fas fa-code"></i>
+                技术栈
+            </div>
+            <h2 class="section-title">我的技能</h2>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category animate-in delay-1">
+                <h3 class="skill-category-title">🐍 Python 开发</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-name">FastAPI / Flask</span>
+                        <span class="skill-level level-expert">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">异步编程 (asyncio)</span>
+                        <span class="skill-level level-expert">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">类型注解 (Type Hints)</span>
+                        <span class="skill-level level-expert">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Pydantic 数据校验</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="skill-category animate-in delay-2">
+                <h3 class="skill-category-title">🤖 AI / LLM</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-name">大模型 API 调用</span>
+                        <span class="skill-level level-expert">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">RAG 检索增强生成</span>
+                        <span class="skill-level level-expert">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">LangChain 框架</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Embedding 向量化</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Prompt Engineering</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="skill-category animate-in delay-3">
+                <h3 class="skill-category-title">☁️ 云服务 & DevOps</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-name">腾讯云 CloudBase</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Serverless 架构</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Docker 容器化</span>
+                        <span class="skill-level level-familiar">了解</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Git 版本控制</span>
+                        <span class="skill-level level-expert">熟练</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="skill-category animate-in delay-4">
+                <h3 class="skill-category-title">🌐 前端开发</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-name">HTML / CSS / JavaScript</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">响应式布局</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Fetch API / AJAX</span>
+                        <span class="skill-level level-proficient">熟练</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section">
+        <div class="section-header">
+            <div class="section-label">
+                <i class="fas fa-timeline"></i>
+                项目时间线
+            </div>
+            <h2 class="section-title">开发历程</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item animate-in delay-1">
+                <div class="timeline-dot completed"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026-06-26</div>
+                    <h4 class="timeline-title">项目启动</h4>
+                    <p class="timeline-desc">开始 AI 应用开发工程师作品集项目</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in delay-2">
+                <div class="timeline-dot completed"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026-06-28</div>
+                    <h4 class="timeline-title">AI 问答助手上线</h4>
+                    <p class="timeline-desc">完成开发并部署到腾讯云 CloudBase</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in delay-3">
+                <div class="timeline-dot completed"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026-06-29</div>
+                    <h4 class="timeline-title">RAG 文档问答完成</h4>
+                    <p class="timeline-desc">完成 RAG 系统开发，本地测试成功</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in delay-4">
+                <div class="timeline-dot completed"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2026-06-30</div>
+                    <h4 class="timeline-title">作品集整理完成</h4>
+                    <p class="timeline-desc">文件整理、文档编写、GitHub 上传</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in delay-1">
+                <div class="timeline-dot planned"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">计划中</div>
+                    <h4 class="timeline-title">RAG 进阶优化</h4>
+                    <p class="timeline-desc">混合检索、Rerank、评测报告</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in delay-2">
+                <div class="timeline-dot planned"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">计划中</div>
+                    <h4 class="timeline-title">数据分析 Agent</h4>
+                    <p class="timeline-desc">Function Calling、工具调用、异常处理</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -602,15 +1152,25 @@
                     <a href="https://github.com/achen20030701" target="_blank">github.com/achen20030701</a>
                 </div>
             </div>
+
+            <div class="contact-card animate-in delay-3">
+                <div class="contact-icon">📋</div>
+                <div class="contact-label">文档</div>
+                <div class="contact-value">
+                    <a href="../docs/PORTFOLIO_OVERVIEW.md">作品集总览</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="footer-text">© 2026 个人作品集</p>
+            <p class="footer-text">© 2026 AI 应用开发工程师作品集</p>
             <div class="footer-links">
+                <a href="#progress">进度</a>
                 <a href="#projects">作品</a>
+                <a href="#skills">技能</a>
                 <a href="#contact">联系</a>
             </div>
         </div>
@@ -640,6 +1200,16 @@
             observer.observe(el);
         });
 
+        // Progress bar animation
+        const progressBars = document.querySelectorAll('.progress-fill');
+        progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 500);
+        });
+
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -653,6 +1223,16 @@
                 }
             });
         });
+
+        // Update time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('zh-CN');
+            const footerText = document.querySelector('.footer-text');
+            footerText.textContent = `© 2026 AI 应用开发工程师作品集 · 最后更新：${timeString}`;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
     </script>
 </body>
 
