@@ -16,9 +16,12 @@ Portfolio/
 │   ├── ai-assistant/           # AI 问答助手前端
 │   └── rag-doc-qa/             # RAG 文档问答前端
 ├── docs/                        # 文档
-│   ├── 作品集流程-AI问答助手.md
+│   ├── PORTFOLIO_OVERVIEW.md   # 作品集总览 ⭐
+│   ├── TECH_DEEP_DIVE-AI问答助手.md  # AI 问答助手技术解析 ⭐
+│   ├── TECH_DEEP_DIVE-RAG文档问答.md # RAG 文档问答技术解析 ⭐
 │   ├── README-AI问答助手.md
 │   └── README-RAG文档问答.md
+├── UPGRADE_PLAN.md              # 升级规划
 └── README.md                    # 本文件
 ```
 
