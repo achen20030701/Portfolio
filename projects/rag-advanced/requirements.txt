@@ -1,0 +1,35 @@
+# RAG 进阶版依赖
+
+# Web 框架
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+
+# LangChain
+langchain==0.1.4
+langchain-openai==0.0.5
+langchain-community==0.0.16
+
+# 向量数据库
+chromadb==0.4.22
+
+# BM25 检索
+rank-bm25==0.2.2
+
+# Rerank
+sentence-transformers==2.3.1
+
+# 文档处理
+pypdf==4.0.1
+python-docx==1.1.0
+
+# 数据处理
+pandas==2.1.4
+numpy==1.26.3
+
+# 工具库
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# 评测
+ragas==0.1.0

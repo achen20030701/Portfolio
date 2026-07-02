@@ -10,7 +10,7 @@
 |------|------|------|---------|
 | AI 智能问答助手 | ✅ 已完成 | 100% | 2026-06-28 |
 | RAG 文档问答系统 | ✅ 已完成 | 100% | 2026-06-29 |
-| RAG 进阶优化 | ⏳ 计划中 | 0% | - |
+| RAG 进阶优化 | 🔧 进行中 | 30% | 2026-06-30 |
 | 数据分析 Agent | ⏳ 计划中 | 0% | - |
 | 作品集完善 | ✅ 已完成 | 100% | 2026-06-30 |
 
@@ -66,25 +66,35 @@
 
 ### 3. RAG 进阶优化
 
-**状态**：⏳ 计划中
+**状态**：🔧 进行中
 
-**计划时间**：第 1-2 周
+**开始时间**：2026-06-30
 
 **核心任务**：
-- [ ] 混合检索（向量 + BM25）
-- [ ] Rerank 重排序（BGE-Reranker）
-- [ ] Query Rewrite（查询重写）
-- [ ] HyDE（假设性文档嵌入）
+- [x] 项目结构搭建
+- [x] 混合检索（向量 + BM25）
+- [x] Rerank 重排序（BGE-Reranker）
+- [x] Query Rewrite（查询重写）
+- [x] HyDE（假设性文档嵌入）
+- [x] 前端页面开发
 - [ ] 评测报告（RAGAS）
+- [ ] 单元测试
+- [ ] 部署上线
 
 **技术选型**：
 - rank_bm25
-- BGE-Reranker
+- sentence_transformers (BGE-Reranker)
 - RAGAS
+- FastAPI
 
-**预期成果**：
-- 检索召回率提升 30%+
-- 有数据支撑的评测报告
+**已完成模块**：
+- `hybrid_retriever.py` - 混合检索器（向量 + BM25 + RRF 融合）
+- `reranker.py` - Rerank 重排序（支持 BGE-Reranker 和简单重排序）
+- `query_optimizer.py` - 查询优化（Query Rewrite + HyDE）
+- `advanced_chain.py` - RAG 进阶版问答链
+- `static/index.html` - 前端页面
+
+**项目地址**：`projects/rag-advanced/`
 
 ---
 
@@ -146,6 +156,12 @@
 - ✅ 创建进度跟踪文档
 - ✅ 更新作品集主页面
 - ✅ 上传到 GitHub
+- 🔧 开始 RAG 进阶优化开发
+  - ✅ 创建项目结构
+  - ✅ 实现混合检索（向量 + BM25 + RRF）
+  - ✅ 实现 Rerank 重排序
+  - ✅ 实现 Query Rewrite 和 HyDE
+  - ✅ 开发前端页面
 
 ### 2026-06-29
 - ✅ RAG 文档问答系统开发完成
